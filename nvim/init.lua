@@ -18,5 +18,8 @@ require('lazy').setup({
     require("plugins.treesitter"),
     require("plugins.lsp"),
     require("plugins.telescope"),
-    require("plugins.rosepine")
+    require("plugins.rosepine"),
+    require("plugins.nvim-dap"),
+    require("plugins.nvim-dap-ui"),
+    require("plugins.nvim-dap-python")
 })
