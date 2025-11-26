@@ -1,0 +1,26 @@
+general {
+        interval = 5
+}
+
+
+order += "volume pulse"
+order += "ethernet enp0s31f6"
+order += "path_exists adminnet"
+order += "tztime clock"
+
+ethernet enp0s31f6 {
+	format_up = "iwlab: %ip"
+	format_down = "iwlab: down"
+}
+
+path_exists adminnet {
+	path = "/proc/sys/net/ipv4/conf/tap0"
+}
+
+tztime clock {
+	format = "%Y-%m-%d %H:%M"
+}
+
+volume pulse {
+	device = "pulse"
+}
