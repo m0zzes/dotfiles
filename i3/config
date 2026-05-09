@@ -41,6 +41,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Use brightness-ctl for controlling backlight
+bindsym XF86MonBrightnessUp exec --no-startup-id brightness-control -b intel_backlight -a 100
+bindsym XF86MonBrightnessDown exec --no-startup-id brightness-control -b intel_backlight -s 100
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -49,7 +54,9 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec /home/matbar/.local/kitty.app/bin/kitty
+#bindsym $mod+Return exec /home/matbar/.local/kitty.app/bin/kitty
+bindsym $mod+Return exec i3-sensible-terminal
+
 
 # kill focused window
 bindsym $mod+q kill
@@ -66,10 +73,10 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus, Commented out, I dont want vim-bindings, collides with other bindings
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
